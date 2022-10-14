@@ -3,11 +3,8 @@ const {
   Partials,
   Collection,
   GatewayIntentBits,
-  ActionRowBuilder,
-  EmbedBuilder,
-  SelectMenuBuilder,
 } = require("discord.js");
-const config = require("./config/config");
+const config = require("./config");
 
 // Creating a new client:
 const client = new Client({
