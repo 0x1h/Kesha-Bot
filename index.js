@@ -31,7 +31,7 @@ const client = new Client({
   presence: {
     activities: [
       {
-        name: "My Crazy Beutiful Life",
+        name: "My Crazy Beautiful Life",
         type: 3,
       },
     ],
