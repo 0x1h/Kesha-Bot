@@ -6,6 +6,8 @@ const {
 } = require("discord.js");
 const config = require("./config");
 
+const { replies } = require("./commands/slash/ai/constant/reply.json");
+
 // Creating a new client:
 const client = new Client({
   intents: [
@@ -26,11 +28,10 @@ const client = new Client({
   presence: {
     activities: [
       {
-        name: "⚠️ UPDATING...",
-        type: 1,
+        name: "My Crazy Beutiful Life",
+        type: 3,
       },
     ],
-    status: "idle",
   },
 });
 
@@ -47,6 +48,8 @@ if (!AuthenticationToken) {
 // Handler:
 client.prefix_commands = new Collection();
 client.slash_commands = new Collection();
+client.user_commands = new Collection();
+client.message_commands = new Collection();
 client.modals = new Collection();
 client.events = new Collection();
 
@@ -61,6 +64,34 @@ client.login(AuthenticationToken).catch((err) => {
   console.error("[CRASH] Something went wrong while connecting to your bot...");
   console.error("[CRASH] Error from Discord API:" + err);
   return process.exit();
+});
+
+client.on("messageCreate", async (msg) => {
+  const prefix = "$";
+
+  if (!msg.guild) return;
+  if (!msg.content.startsWith(prefix)) return;
+
+  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+  const cmd = args.shift().toLowerCase();
+
+  const message = args.join(" ").trim();
+
+  if (cmd === "msg") {
+    if (message === undefined || message === "") {
+      msg.reply(
+        "bro how the fuck am i supposed to know what the hell u want to say bruh"
+      );
+      return;
+    }
+
+    const randomNumber = Math.floor(Math.random() * replies.length);
+    const randomReply = replies[randomNumber];
+
+    msg.reply({
+      content: randomReply.toString(),
+    });
+  }
 });
 
 // Handle errors:

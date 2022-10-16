@@ -1,6 +1,6 @@
 const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
-const config = require("../../config/config.js");
+const config = require("../../config");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
 

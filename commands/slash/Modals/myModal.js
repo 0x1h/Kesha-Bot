@@ -8,14 +8,14 @@ module.exports = {
     permissions: {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
-    run: async (client, interaction, config, db) => {
+    run: async (_, interaction) => {
         const modal = new ModalBuilder()
             .setCustomId('myModal')
-            .setTitle('My Modal');
+            .setTitle('Submit');
 
         const something = new TextInputBuilder()
             .setCustomId('something')
-            .setLabel("Type anything here")
+            .setLabel("(Beta)")
             .setStyle(TextInputStyle.Short);
 
         const ActionRow = new ActionRowBuilder().addComponents(something);

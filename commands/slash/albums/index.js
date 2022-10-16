@@ -22,11 +22,7 @@ module.exports = {
     );
 
     await interaction.reply({ components: [row.toJSON()] });
-
-    if(interaction.isSelectMenu()){
-      console.log('VALUEEE')
-    }
-
+    
     // client.commands.get("album").interaction(albumInteraction);
     // const embed = new MessageEmbed()
     //   .setColor(filterAlbums.color)
