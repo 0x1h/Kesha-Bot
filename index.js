@@ -5,6 +5,9 @@ const {
   GatewayIntentBits,
 } = require("discord.js");
 const config = require("./config");
+const express = require("express");
+
+const app = express();
 
 const { replies } = require("./commands/slash/ai/constant/reply.json");
 
@@ -92,6 +95,16 @@ client.on("messageCreate", async (msg) => {
       content: randomReply.toString(),
     });
   }
+});
+
+const port = process.env.PORT || 8080;
+
+app.get("/", (_, res) => {
+  res.send("<h1>Kesha bot is running</h1>");
+});
+
+app.listen(port, () => {
+  console.log("Discord bot is on", port);
 });
 
 // Handle errors:
