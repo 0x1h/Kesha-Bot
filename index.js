@@ -9,8 +9,6 @@ const express = require("express");
 
 const app = express();
 
-const { replies } = require("./commands/slash/ai/constant/reply.json");
-
 // Creating a new client:
 const client = new Client({
   intents: [
