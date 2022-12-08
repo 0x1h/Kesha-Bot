@@ -39,7 +39,7 @@ const client = new Client({
 });
 
 // Getting the bot token:
-const AuthenticationToken = "OTkzODkzMjQwNjUyNzAxODA3.GOtWmv.ICy2Qd_rZ-YZ9ioHuiuAe5rtSAnDZcne71goIo";
+const AuthenticationToken = process.env.TOKEN || config.Client.TOKEN;
 if (!AuthenticationToken) {
     console.warn(
         "[CRASH] Authentication Token for Discord bot is required! Use Envrionment Secrets or config.js."
