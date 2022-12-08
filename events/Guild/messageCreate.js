@@ -14,6 +14,20 @@ client.on('messageCreate', async message => {
 
   if (message.channel.type !== 0) return;
   if (message.author.bot) return;
+  
+    const mentionReply = new EmbedBuilder()
+        .setColor(0xFFC0CB)
+        .setTitle("why u are tagging me?")
+        .setDescription(
+            "Bitch 💅 if you have any questions use this command </help:1020395237241278465>\nWebsite 🌐: https://kesha.netlify.app/"
+        )
+        .setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
+    if (message.mentions.has(client.user)) {
+        return message.reply({
+            embeds: [mentionReply],
+        });
+    }
+  
   if (!message.content.startsWith(prefix)) return;
   if (!message.guild) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
