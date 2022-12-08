@@ -1,5 +1,4 @@
-const { BOT_TOKEN } = require("../env.json");
-require('dotenv')
+require("dotenv").config();
 
 module.exports = {
   Prefix: "$",
@@ -9,7 +8,7 @@ module.exports = {
   },
 
   Client: {
-    TOKEN: BOT_TOKEN || process.env.RAILWAY_BOT_TOKEN,
+    TOKEN: process.env.RAILWAY_BOT_TOKEN,
     ID: "938136480453365770",
   },
 };
