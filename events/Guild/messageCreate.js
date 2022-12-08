@@ -1,8 +1,6 @@
 const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
 const config = require("../../config");
-const { QuickDB } = require("quick.db");
-const db = new QuickDB();
 
 const { replies } = require("../../commands/slash/ai/constant/reply.json");
 
@@ -12,7 +10,7 @@ module.exports = {
 
 client.on('messageCreate', async message => {
 
-  const prefix = await db.get(`guild_prefix_${message.guild.id}`) || config.Prefix || "?";
+  const prefix = config.Prefix || "?";
 
   if (message.channel.type !== 0) return;
   if (message.author.bot) return;
@@ -35,25 +33,8 @@ client.on('messageCreate', async message => {
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const argsF = args.join(" ").trim();
   const cmd = args.shift().toLowerCase();
   if (cmd.length == 0) return;
-
-    if (cmd === "msg") {
-      if (argsF === undefined || argsF === "") {
-        msg.reply(
-          "bro how the fuck am i supposed to know what the hell u want to say bruh"
-        );
-        return;
-      }
-  
-      const randomNumber = Math.floor(Math.random() * replies.length);
-      const randomReply = replies[randomNumber];
-  
-      msg.reply({
-        content: randomReply.toString(),
-      });
-    }
 
   let command = client.prefix_commands.get(cmd);
 
@@ -91,7 +72,7 @@ client.on('messageCreate', async message => {
     };
 
     try {
-      command.run(client, message, args, prefix, config, db);
+      command.run(client, message, args, prefix, config);
     } catch (error) {
       console.error(error);
     };

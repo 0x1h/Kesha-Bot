@@ -2,8 +2,6 @@ const { EmbedBuilder } = require("discord.js");
 const client = require("../../index");
 const config = require("../../config");
 const { albums } = require("../../commands/slash/albums/constant/db.json");
-const { QuickDB } = require("quick.db");
-const db = new QuickDB();
 
 module.exports = {
   name: "interactionCreate",
@@ -16,7 +14,7 @@ client.on("interactionCreate", async (interaction) => {
     if (!command) return;
 
     try {
-      command.run(client, interaction, config, db);
+      command.run(client, interaction, config);
     } catch (e) {
       console.error(e);
     }
@@ -54,7 +52,7 @@ client.on("interactionCreate", async (interaction) => {
     if (!command) return;
 
     try {
-      command.run(client, interaction, config, db);
+      command.run(client, interaction, config);
     } catch (e) {
       console.error(e);
     }
@@ -67,7 +65,7 @@ client.on("interactionCreate", async (interaction) => {
     if (!command) return;
 
     try {
-      command.run(client, interaction, config, db);
+      command.run(client, interaction, config);
     } catch (e) {
       console.error(e);
     }
@@ -90,7 +88,7 @@ client.on("interactionCreate", async (interaction) => {
       });
 
     try {
-      modal.run(client, interaction, config, db);
+      modal.run(client, interaction, config);
     } catch (e) {
       console.error(e);
     }
