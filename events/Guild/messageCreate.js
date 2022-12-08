@@ -4,6 +4,8 @@ const config = require("../../config");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
 
+const { replies } = require("../../commands/slash/ai/constant/reply.json");
+
 module.exports = {
   name: "messageCreate"
 };
@@ -15,26 +17,43 @@ client.on('messageCreate', async message => {
   if (message.channel.type !== 0) return;
   if (message.author.bot) return;
   
-    const mentionReply = new EmbedBuilder()
-        .setColor(0xFFC0CB)
-        .setTitle("why u are tagging me?")
-        .setDescription(
-            "Bitch 💅 if you have any questions use this command </help:1020395237241278465>\nWebsite 🌐: https://kesha.netlify.app/"
-        )
-        .setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
-    if (message.mentions.has(client.user)) {
-        return message.reply({
-            embeds: [mentionReply],
-        });
-    }
+  const mentionReply = new EmbedBuilder()
+      .setColor(0xFFC0CB)
+      .setTitle("why u are tagging me?")
+      .setDescription(
+          "Bitch 💅 if you have any questions use this command </help:1020395237241278465>\nWebsite 🌐: https://kesha.netlify.app/"
+      )
+      .setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
+  if (message.mentions.has(client.user)) {
+      return message.reply({
+          embeds: [mentionReply],
+      });
+  }
   
   if (!message.content.startsWith(prefix)) return;
   if (!message.guild) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const argsF = args.join(" ").trim();
   const cmd = args.shift().toLowerCase();
   if (cmd.length == 0) return;
+
+    if (cmd === "msg") {
+      if (argsF === undefined || argsF === "") {
+        msg.reply(
+          "bro how the fuck am i supposed to know what the hell u want to say bruh"
+        );
+        return;
+      }
+  
+      const randomNumber = Math.floor(Math.random() * replies.length);
+      const randomReply = replies[randomNumber];
+  
+      msg.reply({
+        content: randomReply.toString(),
+      });
+    }
 
   let command = client.prefix_commands.get(cmd);
 
