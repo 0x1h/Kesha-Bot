@@ -9,8 +9,6 @@ This is Kesha bot which is made for fun, to show off my appreciate to Kesha and 
 
 ## What Kesha bot can do
 
-it is still under development process bit here is what it can yet
-
 * chat with Kesha's AI
 * get info and Spotify URL of each Kesha's album
 * track google photos *[very slow, because it web scraps]*

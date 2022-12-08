@@ -35,25 +35,8 @@ client.on('messageCreate', async message => {
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const argsF = args.join(" ").trim();
   const cmd = args.shift().toLowerCase();
   if (cmd.length == 0) return;
-
-    if (cmd === "msg") {
-      if (argsF === undefined || argsF === "") {
-        msg.reply(
-          "bro how the fuck am i supposed to know what the hell u want to say bruh"
-        );
-        return;
-      }
-  
-      const randomNumber = Math.floor(Math.random() * replies.length);
-      const randomReply = replies[randomNumber];
-  
-      msg.reply({
-        content: randomReply.toString(),
-      });
-    }
 
   let command = client.prefix_commands.get(cmd);
 
