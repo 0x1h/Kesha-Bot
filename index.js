@@ -9,8 +9,6 @@ const express = require("express");
 
 const app = express();
 
-const { replies } = require("./commands/slash/ai/constant/reply.json");
-
 // Creating a new client:
 const client = new Client({
   intents: [
@@ -67,34 +65,6 @@ client.login(AuthenticationToken).catch((err) => {
   console.error("[CRASH] Something went wrong while connecting to your bot...");
   console.error("[CRASH] Error from Discord API:" + err);
   return process.exit();
-});
-
-client.on("messageCreate", async (msg) => {
-  const prefix = "$";
-
-  if (!msg.guild) return;
-  if (!msg.content.startsWith(prefix)) return;
-
-  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
-  const cmd = args.shift().toLowerCase();
-
-  const message = args.join(" ").trim();
-
-  if (cmd === "msg") {
-    if (message === undefined || message === "") {
-      msg.reply(
-        "bro how the fuck am i supposed to know what the hell u want to say bruh"
-      );
-      return;
-    }
-
-    const randomNumber = Math.floor(Math.random() * replies.length);
-    const randomReply = replies[randomNumber];
-
-    msg.reply({
-      content: randomReply.toString(),
-    });
-  }
 });
 
 const port = process.env.PORT || 8080;
