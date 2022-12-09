@@ -25,7 +25,7 @@ client.on('messageCreate', async message => {
           "Bitch 💅 if you have any questions use this command </help:1020395237241278465>\nWebsite 🌐: https://kesha.netlify.app/"
       )
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
-  if (message.mentions.has(client.user)) {
+  if (message.mentions.users.first() === client.user) {
       return message.reply({
           embeds: [mentionReply],
       });
