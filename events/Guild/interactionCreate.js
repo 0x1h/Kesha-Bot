@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require("discord.js");
 const client = require("../../index");
-const config = require("../../config");
+const config = require("../../config/index");
 const { albums } = require("../../commands/slash/albums/constant/db.json");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();

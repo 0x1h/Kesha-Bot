@@ -1,5 +1,5 @@
 const { BOT_TOKEN } = require("../env.json");
-require('dotenv')
+require('dotenv').config();
 
 module.exports = {
   Prefix: "$",

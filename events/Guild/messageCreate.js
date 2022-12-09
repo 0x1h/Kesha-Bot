@@ -1,6 +1,6 @@
 const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
-const config = require("../../config");
+const config = require("../../config/index");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
 
@@ -17,6 +17,7 @@ client.on('messageCreate', async message => {
   if (message.channel.type !== 0) return;
   if (message.author.bot) return;
   
+  // !
   const mentionReply = new EmbedBuilder()
       .setColor(0xFFC0CB)
       .setTitle("why u are tagging me?")
@@ -29,6 +30,7 @@ client.on('messageCreate', async message => {
           embeds: [mentionReply],
       });
   }
+  // !
   
   if (!message.content.startsWith(prefix)) return;
   if (!message.guild) return;
