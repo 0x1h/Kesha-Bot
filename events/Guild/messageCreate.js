@@ -1,10 +1,6 @@
 const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
-const config = require("../../config/index");
-const { QuickDB } = require("quick.db");
-const db = new QuickDB();
-
-const { replies } = require("../../commands/slash/ai/constant/reply.json");
+const config = require("../../config");
 
 module.exports = {
   name: "messageCreate"

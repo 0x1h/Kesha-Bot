@@ -1,4 +1,3 @@
-const { BOT_TOKEN } = require("../env.json");
 require('dotenv').config();
 
 module.exports = {

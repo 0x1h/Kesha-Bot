@@ -4,7 +4,7 @@ const {
   Collection,
   GatewayIntentBits,
 } = require("discord.js");
-const config = require("./config/index");
+const config = require("./config");
 const express = require("express");
 
 const app = express();

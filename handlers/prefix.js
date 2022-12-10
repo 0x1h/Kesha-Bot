@@ -1,5 +1,4 @@
 const fs = require("fs");
-const colors = require("colors");
 
 module.exports = (client, config) => {
   console.log("0------------------| Prefix Handler:".blue);
