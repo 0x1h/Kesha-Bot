@@ -2,8 +2,6 @@ const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
 const client = require("../../index");
 const config = require("../../config");
 
-const { replies } = require("../../commands/slash/ai/constant/reply.json");
-
 module.exports = {
   name: "messageCreate"
 };
@@ -15,6 +13,7 @@ client.on('messageCreate', async message => {
   if (message.channel.type !== 0) return;
   if (message.author.bot) return;
   
+  // !
   const mentionReply = new EmbedBuilder()
       .setColor(0xFFC0CB)
       .setTitle("why u are tagging me?")
@@ -22,11 +21,12 @@ client.on('messageCreate', async message => {
           "Bitch 💅 if you have any questions use this command </help:1020395237241278465>\nWebsite 🌐: https://kesha.netlify.app/"
       )
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
-  if (message.mentions.has(client.user)) {
+  if (message.mentions.users.first() === client.user) {
       return message.reply({
           embeds: [mentionReply],
       });
   }
+  // !
   
   if (!message.content.startsWith(prefix)) return;
   if (!message.guild) return;
