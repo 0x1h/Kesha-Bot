@@ -52,7 +52,7 @@ client.slash_commands = new Collection();
 client.user_commands = new Collection();
 client.message_commands = new Collection();
 client.modals = new Collection();
-client.events = new Collection();
+client.events = new Collection(); 
 
 module.exports = client;
 
