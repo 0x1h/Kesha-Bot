@@ -31,6 +31,13 @@ module.exports = {
     const argsF = message.content.split(" ").slice(1).join(" ");
     const randomMessage = randomRejectMesage[randomMessageIndex];
 
+    if(argsF.includes(' var')){
+      const replaceWithYou = argsF.replace(' var',' xar')
+      return message.reply({
+        content: replaceWithYou,
+      });
+    }
+
     if (
       argsF.includes("@everyone") ||
       argsF.includes("@here") ||
