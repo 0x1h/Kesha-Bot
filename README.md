@@ -11,10 +11,10 @@ This is Kesha bot which is made for fun, to show off my appreciate to Kesha and 
 
 * chat with Kesha's AI
 * get info and Spotify URL of each Kesha's album
-* track google photos *[very slow, because it web scraps]*
-* plays songs in Voice chat
-* fake biden tweet
-* Ship command with mentioned user
-and other other fun commands which will be included on **[Kesha-bot website](https://kesha.netlify.app/)**
+* track google photos *[very slow, because it web scraps]* `(deprectated)`
+* plays songs in Voice chat `(deprectated)`
+* fake biden tweet`(deprectated)`
+* Ship command with mentioned user `(deprectated)`
+and other other fun commands which will be included on **[Kesha-bot website](https://kesha.netlify.app/)** 
 
  this is list what bot can do, or must do in feature
