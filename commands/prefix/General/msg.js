@@ -8,7 +8,7 @@ module.exports = {
     },
     permissions: ["SendMessages"],
     owner: false,
-    run: async (client, message, args, prefix) => {
+    run: async (_, message, args) => {
         const argsF = args.join(" ").trim();
 
         if (!argsF) {
