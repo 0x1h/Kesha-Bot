@@ -1,4 +1,3 @@
-const { EmbedBuilder } = require("discord.js");
 const { replies } = require("../../slash/ai/constant/reply.json");
 
 module.exports = {
