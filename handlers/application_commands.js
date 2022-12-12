@@ -61,7 +61,7 @@ module.exports = (client, config) => {
   }
 
   const rest = new REST({ version: "10" }).setToken(
-    config.Client.TOKEN || process.env.TOKEN
+    config.Client.TOKEN
   );
 
   (async () => {
