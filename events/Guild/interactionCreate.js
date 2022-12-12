@@ -21,8 +21,6 @@ client.on("interactionCreate", async (interaction) => {
   }
 
   if (interaction.isSelectMenu()) {
-    //Select:
-
     const filterAlbums = albums.find(
       (album) => album.name.toLowerCase() === interaction.values[0]
     );

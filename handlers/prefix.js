@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-module.exports = (client, config) => {
+module.exports = (client) => {
   console.log("0------------------| Prefix Handler:".blue);
 
   fs.readdirSync('./commands/prefix').forEach(dir => {
