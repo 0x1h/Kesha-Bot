@@ -17,7 +17,7 @@
 const randomNumber = () => {
   const random = Math.random();
 
-  if (random < 0.9) {
+  if (random < 0.98) {
     return false;
   }
 
