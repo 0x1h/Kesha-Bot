@@ -10,7 +10,7 @@ module.exports = {
     const description = interaction.fields.getTextInputValue("description");
     const image = interaction.fields.getTextInputValue("image");
 
-    const userColor = interaction.member.displayHexColor
+    const userColor = interaction.member.displayHexColor;
 
     const modalEmbed = new EmbedBuilder()
       .setColor(userColor)
@@ -23,6 +23,7 @@ module.exports = {
         iconURL: interaction.user.displayAvatarURL(),
       });
 
-    await interaction.reply({ embeds: [modalEmbed] });
+    await interaction.reply({ content: "<a:mwr_rave:1053772349054406747><a:hmm:931344829592514560>", ephemeral: true });
+    await interaction.channel.send({ embeds: [modalEmbed] });
   },
 };
