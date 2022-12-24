@@ -3,6 +3,7 @@ const {
   Partials,
   Collection,
   GatewayIntentBits,
+  ActivityType,
 } = require("discord.js");
 const config = require("./config");
 const express = require("express");
@@ -29,8 +30,9 @@ const client = new Client({
   presence: {
     activities: [
       {
+        type: ActivityType.Streaming,
         name: "My Crazy Beautiful Life",
-        type: 3,
+        url: "https://www.twitch.tv/callmenikk"
       },
     ],
   },
