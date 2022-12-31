@@ -35,7 +35,6 @@ const anniversarySender = (client) => {
           "იოოოოოოოო გილცოავთ ახალ წელს მრავალს დაესწარით ბედნიერება ჯამრთელეოება და ყველაფერი საუკეთესოოოოოოოოოოოოოოოოოოოოო 🎄😭❄️😍😂😊❤️😘🥰😉🎁💀⛄🎅😎🌟🥵🤭✨🤔"
         ),
     ],
-    content: "||@everyone||",
   });
   client.channels.cache
     .get(GENERAL_ID)
