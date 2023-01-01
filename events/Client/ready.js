@@ -1,10 +1,10 @@
 const client = require("../../index");
-const { eventSender } = require("./eventSender");
+// const { eventSender } = require("./eventSender");
 require("colors");
- 
-const CronJob = require("cron").CronJob;
 
-const cronExpression = "59 23 31 11 *";
+// const CronJob = require("cron").CronJob;
+
+// const cronExpression = "59 23 31 11 *";
 
 // client.on("ready", () => {
 //   function newYearAnniversary() {
