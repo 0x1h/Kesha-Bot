@@ -6,23 +6,23 @@ const CronJob = require("cron").CronJob;
 
 const cronExpression = "59 23 31 11 *";
 
-client.on("ready", () => {
-  function newYearAnniversary() {
-    console.log("Sent...".bgGreen);
+// client.on("ready", () => {
+//   function newYearAnniversary() {
+//     console.log("Sent...".bgGreen);
 
-    eventSender(client)
-  }
+//     eventSender(client)
+//   }
 
-  const cronJob = new CronJob(
-    cronExpression,
-    newYearAnniversary,
-    null,
-    true,
-    "Asia/Tbilisi"
-  );
+//   const cronJob = new CronJob(
+//     cronExpression,
+//     newYearAnniversary,
+//     null,
+//     true,
+//     "Asia/Tbilisi"
+//   );
 
-  cronJob.start();
-});
+//   cronJob.start();
+// });
 
 module.exports = {
   name: "ready.js",
