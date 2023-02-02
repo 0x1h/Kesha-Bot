@@ -1,5 +1,6 @@
 const { EmbedBuilder } = require("discord.js");
 const { randomColor } = require("./utils/randomColor");
+const { getNumber } = require("./utils/getNumber");
 
 module.exports = {
   id: "confessId",
@@ -7,14 +8,19 @@ module.exports = {
     if (!interaction.isModalSubmit()) return;
 
     const description = interaction.fields.getTextInputValue("description");
-    
+
     const channel = client.channels.cache.get("1070294510157971498");
 
-    const messages = await channel.messages.fetch()
-    const messagesSize = messages.size + 1
+    let message = await channel.messages
+      .fetch({ limit: 1 })
+      .then((messagePage) =>
+        messagePage.size === 1 ? messagePage.at(0) : null
+      );
+
+    const number = getNumber(message.embeds[0].data)
 
     const modalEmbed = new EmbedBuilder()
-      .setTitle(`Anonymous Confession (#${messagesSize})`)
+      .setTitle(`Anonymous Confession (#${number+1})`)
       .setColor(randomColor())
       .setDescription(description);
 
@@ -24,7 +30,6 @@ module.exports = {
       ephemeral: true,
     });
 
-    
     await client.channels.cache
       .get("1070294510157971498")
       .send({ embeds: [modalEmbed] });
