@@ -8,7 +8,7 @@ module.exports = {
   type: 1,
   options: [
     {
-      type: 3,
+      type: 6,
       name: "user",
       description: "mention user to make drip",
       required: true,
@@ -19,11 +19,7 @@ module.exports = {
   },
   run: (_, interaction) => {
     const clientID = interaction.options.get("user").value;
-    const user = interaction.guild.members.cache.get(
-      formatClientId(clientID)
-    );
-
-
+    const user = interaction.guild.members.cache.get(formatClientId(clientID));
 
     if (user == undefined) {
       interaction.reply({
@@ -33,12 +29,14 @@ module.exports = {
       return;
     }
 
-    const userAvatar = formatAvatarUrl(user.user.displayAvatarURL({ size: 2048 }));
+    const userAvatar = formatAvatarUrl(
+      user.user.displayAvatarURL({ size: 2048 })
+    );
 
     const embed = new EmbedBuilder()
-		.setImage(`https://api.popcat.xyz/drip?image=${userAvatar}`)
-		.setColor('#16537e')  
+      .setImage(`https://api.popcat.xyz/drip?image=${userAvatar}`)
+      .setColor("#16537e");
 
-    interaction.reply({embeds: [embed]})
+    interaction.reply({ embeds: [embed] });
   },
 };

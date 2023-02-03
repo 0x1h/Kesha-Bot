@@ -6,8 +6,8 @@ const {
 } = require("discord.js");
 
 module.exports = {
-  name: "confess",
-  description: "confess someone without knowing who did that",
+  name: "confess-modal",
+  description: "confess someone without knowing who did that by opening modal",
   type: 1,
   options: [],
   permissions: {
@@ -20,7 +20,7 @@ module.exports = {
 
     const setDescription = new TextInputBuilder()
       .setCustomId("description")
-      .setPlaceholder('say something nobody will know ')
+      .setPlaceholder("say something nobody will know")
       .setLabel("Description")
       .setStyle(TextInputStyle.Paragraph);
 
