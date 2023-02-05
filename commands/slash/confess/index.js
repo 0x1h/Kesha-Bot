@@ -38,11 +38,16 @@ module.exports = {
 
     const channel = client.channels.cache.get("1070294510157971498");
 
-    let messages = await channel.messages
+    const messages = await channel.messages
       .fetch({ limit: 2 })
-      .then((messagePage) =>
-        messagePage.size === 2 ? messagePage.at(-1) : null
-      );
+      .then((messagePage) => {
+        if (messagePage.size === 2 && messagePage.at(0).embeds[0].data.video) {
+          return messagePage.at(-1);
+        }
+
+        return messagePage.at(0);
+      });
+
 
     const number = getNumber(messages.embeds[0].data);
 
