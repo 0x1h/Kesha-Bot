@@ -39,9 +39,9 @@ module.exports = {
     const channel = client.channels.cache.get("1070294510157971498");
 
     let messages = await channel.messages
-      .fetch({ limit: 1 })
+      .fetch({ limit: 2 })
       .then((messagePage) =>
-        messagePage.size === 1 ? messagePage.at(0) : null
+        messagePage.size === 2 ? messagePage.at(-1) : null
       );
 
     const number = getNumber(messages.embeds[0].data);
