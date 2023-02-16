@@ -1,9 +1,9 @@
 const getNumber = (embed) => {
-  const {title} = embed
+  const { title } = embed;
 
-  const number  = title.split("#")[1].slice(0,2)
+  const number = title.split("#")[1].split('#')[0].replace(')', '')
 
-  return Number(number)
+  return Number(number);
 };
 
 module.exports = { getNumber };

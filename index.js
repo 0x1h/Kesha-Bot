@@ -62,6 +62,7 @@ module.exports = client;
   require(`./handlers/${file}`)(client, config);
 });
 
+
 // Login to the bot:
 client.login(AuthenticationToken).catch((err) => {
   console.error("[CRASH] Something went wrong while connecting to your bot...");
@@ -83,4 +84,13 @@ app.listen(port, () => {
 process.on("unhandledRejection", async (err, promise) => {
   console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red);
   console.error(promise);
+});
+
+client.on('guildMemberUpdate', (oldMember, newMember) => {
+  console.log({oldMember, newMember});
+  if(newMember.nickname && oldMember.nickname !== newMember.nickname) {
+      if(newMember.nickname === 'rame') {
+          newMember.setNickname('rame but changed')
+      }
+  }
 });

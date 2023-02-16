@@ -11,19 +11,19 @@ module.exports = {
     {
       type: 3,
       name: "message",
-      description: "say anything what ever you want",
+      description: "say anything what ever you want 💭",
       required: true,
     },
     {
       type: 3,
       name: "media-url",
-      description: "drop link there",
+      description: "drop link there 🙄",
       required: false,
     },
     {
       type: 11,
       name: "attachment",
-      description: "upload attachement",
+      description: "upload attachement 📂",
       required: false,
     },
   ],
