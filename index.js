@@ -31,7 +31,7 @@ const client = new Client({
     activities: [
       {
         type: ActivityType.Streaming,
-        name: "My Crazy Beautiful Life",
+        name: "Onlt Love Can Save Us Now",
         url: "https://www.twitch.tv/callmenikk"
       },
     ],
