@@ -1,5 +1,5 @@
 <div align="center">	
-	<img src=https://i.ibb.co/SB9dcg0/Bqkgt-Cb5-400x400-modified.png" width="300">
+	<img src="https://pbs.twimg.com/profile_images/1650857907884531713/JKsvLVG7_400x400.jpg" width="300">
 <h1>Kesha bot</h1>
 </div>
 
