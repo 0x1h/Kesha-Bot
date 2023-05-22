@@ -4,9 +4,9 @@
 
 const karmaAnswers = [
   "<replace> vincaa etyobaa ;DDDD",
-  "<replace> tavi gabia <:nawhbruhfrnowaybruh:1051976498686476348>",
-  "trakshi aravis gaercho, <replace> shen xar <:lolsha:1051976660418826261>",
-  "she <replace>o martla ;DDD wadi andzrie she bitchlesso",
+  "<replace> tavi gabia",
+  "trakshi aravis gaercho, <replace> shen xar",
+  "<replace> me var? mouwoveli ylit ro darbixar",
 ];
 
 const karmaReplaceString = (message) => {
