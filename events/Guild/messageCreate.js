@@ -10,6 +10,12 @@ client.on('messageCreate', async message => {
 
   const prefix = config.Prefix || "?";
 
+  if(message.content.startsWith('https://open.spotify.com/track/')){
+    message.react('<:upvote:1124087318358282300>')
+    message.react('<:downvote:1124087316617633792>')
+    return 
+  }
+
   if (message.channel.type !== 0) return;
   if (message.author.bot) return;
   
